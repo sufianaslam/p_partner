@@ -66,6 +66,7 @@
             <li><a href="#page_Duas">Duas</a></li>
 			<li><a href="#page4">Instructions</a></li>
             <li><a href="#page3">Obligation CheckList</a></li>
+            <li><a href="#page_maps">Maps</a></li>
 		</ul>		
 	</div>
   </div> 
@@ -79,6 +80,7 @@
             <li><a href="#page_Duas">Duas</a></li>
 			<li><a href="#page4">Instructions</a></li>
             <li><a href="#page3">Obligation CheckList</a></li>
+            <li><a href="#page_maps">Maps</a></li>
 		</ul>		
 	</div>
 	<div data-role="footer" data-position="fixed">
@@ -98,6 +100,7 @@
             <li><a href="#page_Duas">Duas</a></li>
 			<li><a href="#page4">Instructions</a></li>
             <li><a href="#page3">Obligation CheckList</a></li>
+            <li><a href="#page_maps">Maps</a></li>
 		</ul>		
 	</div>
   </div> 
@@ -131,6 +134,7 @@
             <li><a href="#page_Duas">Duas</a></li>
 			<li><a href="#page4">Instructions</a></li>
             <li><a href="#page3">Obligation CheckList</a></li>
+            <li><a href="#page_maps">Maps</a></li>
 		</ul>		
 	</div>
   </div> 
@@ -204,6 +208,7 @@ no partner.</p>
             <li><a href="#page_Duas">Duas</a></li>
 			<li><a href="#page4">Instructions</a></li>
             <li><a href="#page3">Obligation CheckList</a></li>
+            <li><a href="#page_maps">Maps</a></li>
 		</ul>		
 	</div>
   </div> 
@@ -279,6 +284,7 @@ no partner.</p>
             <li><a href="#page_Duas">Duas</a></li>
 			<li><a href="#page4">Instructions</a></li>
             <li><a href="#page3">Obligation CheckList</a></li>
+            <li><a href="#page_maps">Maps</a></li>
 		</ul>		
 	</div>
   </div> 
@@ -295,7 +301,22 @@ no partner.</p>
 </div>
 
 
-
+<div data-role="page" id="page_maps">
+	<div data-role="header">
+		<h1>Maps</h1>
+	</div>
+	<div data-role="content">	
+		Content		
+        <p>
+        <img src="http://maps.googleapis.com/maps/api/staticmap?center=33.6557473,73.0165939&zoom=15&size=300x700&markers=color:red%7Clabel:A%7C33.6557473,73.0165939&maptype=roadmap18&sensor=false">
+        </p>
+        <span> Latitude : </span> <span id=lat></span> <br />
+    <span> Longitude : </span> <span id=lng></span> <br />
+	</div>
+	<div data-role="footer" data-position="fixed">
+		<h4>Page Footer</h4>
+	</div>
+</div>
 
 
 
@@ -326,3 +347,14 @@ no partner.</p>
 
 </body>
 </html>
+<script>
+
+navigator.geolocation.getCurrentPosition (function (pos)
+{
+  var lat = pos.coords.latitude;
+  var lng = pos.coords.longitude;
+  $("#lat").text (lat);
+  $("#lng").text (lng);
+});
+
+</script>
